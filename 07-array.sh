@@ -2,8 +2,8 @@
 
 FRUITS=("Apple" "Mango" "Banana")
 
-echo "First value: ${Fruit[0]}"
+echo "First value: ${FRUITS[0]}"
 
-echo "Second value: ${Fruit[1]}"
+echo "Second value: ${FRUITS[1]}"
 
-echo "Third value: ${Fruit[2]}"
+echo "Third value: ${FRUITS[2]}"
