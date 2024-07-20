@@ -1,5 +1,5 @@
 #!/bin/bash
 
-DATA=(date)
+DATA=$(date)
 
-echo "date and time is : $(date)"
+echo "script started executing : $(date)"
