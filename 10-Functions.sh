@@ -1,16 +1,16 @@
 #!/bin/bash
 
-ID=$[ id -ne 0 ]
+ID=$(id -u)
 
 VALIDATE(){
 
-if [ $? -ne 0 ]
-then
+  if [ $? -ne 0 ]
+  then
    echo "ERROR :: installation is failed"
    exit 1
-else
+  else
    echo "installation is success"
-fi
+  fi
 }
 
 yum install mysql -y
