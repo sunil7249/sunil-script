@@ -7,7 +7,5 @@ then
    echo "give the number $NUMBER is grater than 100"
 else
     echo "give the number $NUMBER is less than 100"   
-if else
-    echo "give the number $NUMBER is less than 100"  
 
 fi
