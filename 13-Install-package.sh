@@ -36,9 +36,10 @@ for package in $@
 do 
     echo "yum list installed $package"
      if [ $? -ne 0 ]
-    then 
+     then 
        yum  install $package -y 
        VALIDATE $? "installation of $package"
      else
         echo -e "$package is installed ... $Y Skipping $N"  
+     fi
 done     
