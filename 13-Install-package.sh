@@ -2,6 +2,17 @@
 
 ID=$(id -u)
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+TIMESTAMP=$(date +%F-%H-%M-%S)
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
+
+echo "script is executed at $TIMESTAMP" &>> $LOGFILE
+
+
 VALIDATE(){
 
   if [ $1 -ne 0]
@@ -12,17 +23,6 @@ VALIDATE(){
    fi     
 }
 
-R="\e[31m"
-G="\e[32m"
-Y="\e[33m"
-N="\e[0m"
-
-TIMESTAMP=$(date +%F-%H-%M-%S)
-
-LOGFILE="/tmp/$0-$TIMESTAMP.log"
-
-echo "script is executed at $TIMESTAMP" &>> $LOGFILE
-
 if [ $ID -ne 0 ]
 
 then
@@ -32,8 +32,8 @@ else
      echo  "you are root user"
 fi
 
- for package in $@
- do 
+for package in $@
+do 
     echo "yum list installed $package"
      if [ $? -ne 0 ]
     then 
@@ -41,4 +41,4 @@ fi
        VALIDATE $? "installation of $package"
      else
         echo -e "$package is installed ... $Y Skipping $N"  
-  done     
+done     
