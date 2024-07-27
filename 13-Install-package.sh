@@ -41,4 +41,4 @@ fi
        VALIDATE $? "installation of $package"
      else
         echo -e "$package is installed ... $Y Skipping $N"  
- done     
+  done     
